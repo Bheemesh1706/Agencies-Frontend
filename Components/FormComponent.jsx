@@ -13,11 +13,14 @@ export default function FormInput (formprop)
                 onChangeText={value => onChange(value)}
                 value={value}
                 placeholder = {formprop.placeholder}
+                multiline= {formprop.name === 'Address'? true:false}
+                secureTextEntry = {formprop.placeholder === 'Password'? true:false}
             />
 
           )}
         name = {formprop.name}
         defaultValue =""
     />
+    
     );
 } 
