@@ -7,12 +7,16 @@ const sendDataRegister = async(data)=> {
             console.log("register_axiso")
                  console.log(data)
                    const response = await axi.post(`${API_HOST}/users`, {
-                        username: data.Username,
-                        email: data.Email,
+                        Name: data.Name,
+                        Agency: data.AgencyName,
                         password: data.Password,
+                        Area: data.Area,
+                        City: data.City,
+                        Address: data.Address,
                     })
                  return response.data.success_message
         }
     catch(error){console.log(error.response) } 
 }
 
+ 
