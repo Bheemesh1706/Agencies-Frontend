@@ -4,6 +4,7 @@ import {useForm} from 'react-hook-form';
 import React from 'react';
 import {RegisterSchema} from './SchemaComponent';
 import { yupResolver } from '@hookform/resolvers/yup';
+import {sendDataRegister} from './BackComponents/RegisterBackend'
 
 
 
@@ -22,7 +23,15 @@ export default function Register() {
 
     
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = (data) => {
+        console.log(data);
+        sendDataRegister(data).then((e)=>{
+            if(e==="User Created Sucessfully")
+             {
+                console.log("Registered")
+            }
+        })
+    }
 
     return(
             <View>
