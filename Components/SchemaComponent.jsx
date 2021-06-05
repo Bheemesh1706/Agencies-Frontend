@@ -12,7 +12,7 @@ const RegisterSchema = yup.object().shape({
   });
 
 const LoginSchema = yup.object().shape({
-    Name: yup.string().required().min(10).max(25).matches(/^[a-zA-Z]+$/, "Only alphabets are allowed"),
+    Code : yup.string().required().min(7).max(7).matches(/^[0-9]+$/, "Must be only digits"),
     Password : yup.string().required('Password is required').min(8).max(15).matches(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]+$/,'Password must contain atleast one speacial charecter, digit and a capital letter'),
   });
   
