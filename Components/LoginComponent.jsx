@@ -19,7 +19,7 @@ export default function Login() {
     const onSubmit = (data) => {
         console.log(data);
         sendDataLogin(data).then((e)=>{
-            if(e==="Login Sucessfully")
+            if(e==="Success!")
              {
                 console.log("Logged in")
             }

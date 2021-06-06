@@ -1,13 +1,12 @@
 import axi from 'axios'
-import {API_HOSTS} from './Config'
+import {API_HOST} from './Config'
 
 const sendDataLogin = async(data)=> {
             
     try{ 
-            console.log("register_axiso")
-            console.log(data.Password)
+            console.log("login_axiso")
                  console.log(data)
-                   const response = await axi.post(`${API_HOSTS}/login`, { agency: {
+                   const response = await axi.post(`${API_HOST}/login`, { agency: {
                         password: data.Password,
                         Code: data.Code,
                     }})
