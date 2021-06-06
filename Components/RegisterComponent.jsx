@@ -10,7 +10,7 @@ import {sendDataRegister} from './BackComponents/RegisterBackend'
 
 
 
-export default function Register() {
+export default function Register({navigation}) {
 
     const {control, handleSubmit, formState: {errors} } = useForm({
         resolver: yupResolver(RegisterSchema)
@@ -35,6 +35,7 @@ export default function Register() {
 
     return(
             <View>
+                <Button title="Login" onPress={()=> navigation.navigate('Login')} />
                 {InputValues.map(({name,placeholder})=><>
                 <FormInput  control ={control}  name = {name}  placeholder = {placeholder}/>
                 {Boolean(errors[name]) && <Text>{errors[name]?.message}</Text>}
