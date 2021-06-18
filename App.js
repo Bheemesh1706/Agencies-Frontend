@@ -6,6 +6,7 @@ import Register from './Components/RegisterComponent'
 import Login from './Components/LoginComponent'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import DashBoard from './Components/DashBoardComponents/DashBoard'
 
 const Stack = createStackNavigator();
 
@@ -15,7 +16,7 @@ export default function App() {
     
           <NavigationContainer>
                 <Stack.Navigator initialRouteName = "Register">
-                    <Stack.Screen name="Register" component= {Register}/>
+                    <Stack.Screen name="Register" component= {DashBoard}/>
                     <Stack.Screen name = "Login" component = {Login}/>
                 </Stack.Navigator>
           </NavigationContainer>
