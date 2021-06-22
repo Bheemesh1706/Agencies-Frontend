@@ -5,6 +5,7 @@ import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {LoginSchema} from './SchemaComponent';
 import {sendDataLogin} from './BackComponents/LoginBackend'
+import { storeData,getData } from './BackComponents/SessionStorage';
 
 export default function Login() {
 
@@ -20,8 +21,13 @@ export default function Login() {
         console.log(data);
         sendDataLogin(data).then((e)=>{
             if(e==="Success!")
-             {
+             {  
+                const value = JSON.stringify(data.Code)
+                storeData('session_cookie',value)
+                console.log(value)
                 console.log("Logged in")
+
+                
             }
         })
     }

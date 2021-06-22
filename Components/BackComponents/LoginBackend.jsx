@@ -1,6 +1,7 @@
 import axi from 'axios'
 import {API_HOST} from './Config'
 
+
 const sendDataLogin = async(data)=> {
             
     try{ 
@@ -14,5 +15,6 @@ const sendDataLogin = async(data)=> {
         }
     catch(error){console.log(error.response.data) } 
 }
+
 
 export {sendDataLogin}
